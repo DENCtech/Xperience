@@ -80,7 +80,7 @@ class AuthenticateUser {
    req.userInfo = user;
    return next();
   } catch (err) {
-   return res.status(500).json({ status: 'failed', message: 'Could not validate username' });
+   return res.status(500).json({ status: 'failed', message: 'Could not validate user' });
   }
  }
 
@@ -103,7 +103,7 @@ class AuthenticateUser {
    }
    return next();
   } catch (err) {
-   return res.status(500).json({ status: 'failed', message: 'Could not validate username' });
+   return res.status(500).json({ status: 'failed', message: 'Could not validate user' });
   }
  }
 }

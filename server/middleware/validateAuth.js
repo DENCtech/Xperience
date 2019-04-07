@@ -16,9 +16,7 @@ const validateUserRegistrationFields = [
    checkNull: true,
    checkFalsy: true
   })
-  .withMessage('email is required')
-  .isLength({ min: 2 })
-  .withMessage('comment required'),
+  .withMessage('email is required'),
 
  body('password')
   .exists({
