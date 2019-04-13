@@ -27,12 +27,12 @@ const validateUserRegistrationFields = [
   .isLength({ min: 8 })
   .withMessage('minimum character length for password is 8'),
 
- body('comfirmPassword')
+ body('confirmPassword')
   .exists({
    checkNull: true,
    checkFalsy: true
   })
-  .withMessage('comfirm password is required')
+  .withMessage('confirm password is required')
 ];
 
 const validateUserLoginFields = [
@@ -52,9 +52,9 @@ const validateUserLoginFields = [
 ];
 
 const passwordCheck = (req, res, next) => {
- const { password, comfirmPassword } = req.body;
+ const { password, confirmPassword } = req.body;
 
- const isEqual = password === comfirmPassword;
+ const isEqual = password === confirmPassword;
 
  if (!isEqual) {
   return res.status(400).json({
