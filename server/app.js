@@ -1,9 +1,9 @@
-import "@babel/polyfill";
-import express from "express";
-import bodyParser from "body-parser";
-import logger from "morgan";
-import cors from "cors";
-import dotenv from "dotenv";
+import '@babel/polyfill';
+import express from 'express';
+import bodyParser from 'body-parser';
+import logger from 'morgan';
+import cors from 'cors';
+import dotenv from 'dotenv';
 import routes from './routes';
 
 dotenv.config();
@@ -15,19 +15,16 @@ const app = express();
 app.use(cors());
 
 // Log requests to the console.
-app.use(logger("dev"));
+app.use(logger('dev'));
 
 // Parse incoming requests data
 app.use(bodyParser.json());
 
 // Setup an index route
-app.get("/", (req, res) =>
- res.status(200).send({
-  status: 'success',
-  message: "Welcome to My Xperience",
-  httpVerb: req.method
- })
-);
+app.get('/', (req, res) => res.status(200).send({
+ status: 'success',
+ message: 'Welcome to My Xperience'
+}));
 
 // Routes
 app.use('/api/v1', routes);
